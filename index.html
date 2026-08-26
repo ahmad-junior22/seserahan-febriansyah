@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Febriansyah Seserahan — Katalog Produk</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --rose:#9C1B49;
+    --rose-deep:#7A1439;
+    --brown:#8A6A43;
+    --brown-light:#B79A6E;
+    --cream:#FBF6EF;
+    --cream-2:#F1E4D3;
+    --cream-3:#EAD9C4;
+    --ink:#241E1A;
+  }
+  body{
+    font-family:'Jost', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+  }
+  .font-display{font-family:'Cormorant Garamond', serif;}
+  .tracked{letter-spacing:0.32em;}
+  .tracked-sm{letter-spacing:0.18em;}
+  .text-rose{color:var(--rose);}
+  .bg-rose{background-color:var(--rose);}
+  .border-rose{border-color:var(--rose);}
+  .text-brown{color:var(--brown);}
+  .bg-cream2{background-color:var(--cream-2);}
+  .bg-cream3{background-color:var(--cream-3);}
+  .divider-line{
+    background: linear-gradient(90deg, transparent, var(--brown-light), transparent);
+    height:1px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid #EADFD0;
+    transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+  }
+  .card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -20px rgba(122,20,57,0.25);
+    border-color:var(--rose);
+  }
+  .btn-primary{
+    background:var(--rose);
+    color:#fff;
+    transition:background .3s ease, transform .2s ease;
+  }
+  .btn-primary:hover{ background:var(--rose-deep); transform:translateY(-2px); }
+  .btn-outline{
+    border:1px solid var(--brown);
+    color:var(--brown);
+    transition:all .3s ease;
+  }
+  .btn-outline:hover{ background:var(--brown); color:#fff; }
+  .fade-in{ animation: fadeIn .6s ease both; }
+  @keyframes fadeIn{ from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);} }
+  .gunungan{
+    clip-path: polygon(50% 0%, 100% 62%, 100% 100%, 0% 100%, 0% 62%);
+  }
+  ::selection{ background:var(--cream-3); color:var(--rose-deep); }
+  html{ scroll-behavior:smooth; }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- NAV -->
+<header class="sticky top-0 z-40 bg-cream/90 backdrop-blur border-b border-[#EADFD0]">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+    <button onclick="showHome()" class="flex items-center gap-3 group">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <circle cx="17" cy="17" r="16" stroke="var(--brown)" stroke-width="1"/>
+        <path d="M11 20 L14 14 L17 20 L20 13 L23 20" stroke="var(--rose)" stroke-width="1.3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="font-display text-xl tracked-sm text-rose leading-none">FEBRIANSYAH<br><span class="text-[10px] text-brown tracked block mt-0.5">SESERAHAN</span></span>
+    </button>
+    <nav class="hidden md:flex items-center gap-10 text-xs tracked-sm text-[#5b5147]">
+      <button onclick="showHome()" class="hover:text-rose transition">BERANDA</button>
+      <button onclick="scrollToSection('produk')" class="hover:text-rose transition">PRODUK</button>
+      <button onclick="scrollToSection('mahar')" class="hover:text-rose transition">MAHAR</button>
+      <button onclick="scrollToSection('kontak')" class="hover:text-rose transition">KONTAK</button>
+    </nav>
+    <a href="https://wa.me/6282387536701?text=Halo%20Febriansyah%20Seserahan%2C%20saya%20ingin%20bertanya%20tentang%20produk." target="_blank"
+       class="btn-primary rounded-full px-5 py-2.5 text-xs tracked-sm">HUBUNGI KAMI</a>
+  </div>
+</header>
+
+<!-- ============ HOME PAGE ============ -->
+<main id="page-home">
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-20 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="fade-in">
+      <p class="text-xs tracked text-brown mb-5">JASA HIAS &amp; SEWA SESERAHAN · SEJAK 2024</p>
+      <h1 class="font-display text-5xl md:text-6xl leading-[1.08] text-[#241E1A]">
+        Seserahan yang<br> berbicara <span class="italic text-rose">sebelum</span><br> akad diucapkan.
+      </h1>
+      <p class="mt-6 text-[#5b5147] leading-relaxed max-w-md">
+        Kami menata tray, box, dan mahar pengantin dengan rangkaian bunga artificial custom —
+        siap pakai H-1, menemani hari bahagia, kembali H+1.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <button onclick="scrollToSection('produk')" class="btn-primary rounded-full px-7 py-3.5 text-xs tracked-sm">LIHAT PRODUK</button>
+        <a href="https://wa.me/6282387536701?text=Halo%20Febriansyah%20Seserahan%2C%20saya%20ingin%20pesan." target="_blank" class="btn-outline rounded-full px-7 py-3.5 text-xs tracked-sm text-center">PESAN VIA WHATSAPP</a>
+      </div>
+      <div class="mt-10 flex gap-10 text-sm">
+        <div><p class="font-display text-2xl text-rose">6+</p><p class="text-xs text-[#8a8074] tracked-sm mt-1">PILIHAN TRAY</p></div>
+        <div><p class="font-display text-2xl text-rose">4</p><p class="text-xs text-[#8a8074] tracked-sm mt-1">DESAIN MAHAR</p></div>
+        <div><p class="font-display text-2xl text-rose">100%</p><p class="text-xs text-[#8a8074] tracked-sm mt-1">CUSTOM WARNA</p></div>
+      </div>
+    </div>
+
+    <div class="relative fade-in flex justify-center">
+      <div class="gunungan w-72 h-96 bg-cream2 border border-[#DEC9AC] relative flex items-center justify-center">
+        <svg width="200" height="260" viewBox="0 0 200 260" fill="none">
+          <path d="M100 20 C120 60 150 70 150 110 C150 150 120 170 100 220 C80 170 50 150 50 110 C50 70 80 60 100 20Z" stroke="var(--brown-light)" stroke-width="1"/>
+          <circle cx="100" cy="120" r="3" fill="var(--rose)"/>
+          <path d="M60 100 Q80 80 100 100 Q120 80 140 100" stroke="var(--rose)" stroke-width="1" fill="none"/>
+          <path d="M55 150 Q75 135 100 150 Q125 135 145 150" stroke="var(--brown)" stroke-width="1" fill="none"/>
+          <text x="100" y="235" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="15" fill="var(--rose-deep)" letter-spacing="2">MAHAR</text>
+        </svg>
+      </div>
+      <div class="absolute -bottom-6 -right-2 bg-white border border-[#EADFD0] px-5 py-3 shadow-lg">
+        <p class="text-[10px] tracked-sm text-brown">MULAI DARI</p>
+        <p class="font-display text-2xl text-rose">Rp 40.000</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-line max-w-7xl mx-auto"></div>
+
+  <!-- PRODUK SESERAHAN -->
+  <section id="produk" class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+    <div class="text-center max-w-xl mx-auto mb-14">
+      <p class="text-xs tracked text-brown mb-3">PRODUK CATALOG</p>
+      <h2 class="font-display text-4xl">Tray &amp; Paket Seserahan</h2>
+      <p class="text-[#5b5147] mt-3 text-sm">Sewa lengkap dengan jasa hias, atau paket box yang menjadi milik Anda.</p>
+    </div>
+    <div id="produk-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+  </section>
+
+  <div class="divider-line max-w-7xl mx-auto"></div>
+
+  <!-- KATALOG MAHAR -->
+  <section id="mahar" class="max-w-7xl mx-auto px-6 lg:px-10 py-20">
+    <div class="text-center max-w-xl mx-auto mb-14">
+      <p class="text-xs tracked text-brown mb-3">PRODUK CATALOG</p>
+      <h2 class="font-display text-4xl">Katalog Mahar</h2>
+      <p class="text-[#5b5147] mt-3 text-sm">Frame mahar dengan nama pengantin 3D, lampu LED, dan bunga custom.</p>
+    </div>
+    <div id="mahar-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7"></div>
+  </section>
+
+  <!-- KONTAK / FOOTER -->
+  <section id="kontak" class="bg-[#241E1A] text-cream mt-10">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs tracked text-[#B79A6E] mb-3">CONTACT US</p>
+        <h3 class="font-display text-3xl mb-6">Ceritakan tanggal spesialmu,<br> kami siapkan seserahannya.</h3>
+        <a href="https://wa.me/6282387536701?text=Halo%20Febriansyah%20Seserahan%2C%20saya%20ingin%20konsultasi%20seserahan." target="_blank" class="btn-primary inline-block rounded-full px-7 py-3.5 text-xs tracked-sm">CHAT WHATSAPP</a>
+      </div>
+      <div class="space-y-3 text-sm text-[#D8CDBE]">
+        <p><span class="text-[#B79A6E] tracked-sm text-xs block mb-1">PHONE</span>082 387 536 701</p>
+        <p><span class="text-[#B79A6E] tracked-sm text-xs block mb-1">INSTAGRAM</span>@Febriansyah.seserahan</p>
+        <p><span class="text-[#B79A6E] tracked-sm text-xs block mb-1">TIKTOK</span>Febriansyah seserahan</p>
+        <p><span class="text-[#B79A6E] tracked-sm text-xs block mb-1">ALAMAT</span>Bedoyo Rt 003/008, Pereng, Mojogedang</p>
+      </div>
+    </div>
+    <div class="border-t border-[#3a332c] py-6 text-center text-[10px] tracked text-[#8a8074]">FEBRIANSYAH SESERAHAN · SINCE 2024</div>
+  </section>
+</main>
+
+<!-- ============ DETAIL PAGE ============ -->
+<main id="page-detail" class="hidden max-w-5xl mx-auto px-6 lg:px-10 py-14 fade-in">
+  <button onclick="showHome()" class="text-xs tracked-sm text-brown hover:text-rose transition mb-10 inline-flex items-center gap-2">
+    <span>←</span> KEMBALI KE BERANDA
+  </button>
+  <div id="detail-content"></div>
+</main>
+
+<script>
+const products = [
+  {
+    id:'tray-fiber-silver', category:'Tray Seserahan', name:'Tray Fiber Silver',
+    price:'Rp 45.000', priceUnit:'/ tray', priceAlt:'Rp 200.000 / 5 tray',
+    includes:[
+      'Jasa hias seserahan',
+      'Sewa tray & tutup akrilik kotak',
+      'Sewa bunga artificial (bebas request warna)',
+      'Free sewa manekin perhiasan',
+      'Durasi sewa 3 hari (H-1, H, H+1)'
+    ],
+    note:'Tersedia 5 tray', owned:false
+  },
+  {
+    id:'tray-picasso-kotak', category:'Tray Seserahan', name:'Tray Picasso (Kotak)',
+    price:'Rp 50.000', priceUnit:'/ tray', priceAlt:null,
+    includes:[
+      'Jasa hias seserahan',
+      'Sewa tray & tutup akrilik kotak',
+      'Sewa bunga artificial (bebas request warna)',
+      'Free sewa manekin perhiasan',
+      'Durasi sewa 3 hari (H-1, H, H+1)'
+    ],
+    note:'Tersedia 8 tray', owned:false
+  },
+  {
+    id:'tray-picasso-oval', category:'Tray Seserahan', name:'Tray Picasso (Oval)',
+    price:'Rp 55.000', priceUnit:'/ tray', priceAlt:null,
+    includes:[
+      'Jasa hias seserahan',
+      'Sewa tray & tutup akrilik oval',
+      'Sewa bunga artificial (bebas request warna)',
+      'Free sewa manekin perhiasan',
+      'Durasi sewa 3 hari (H-1, H, H+1)'
+    ],
+    note:'Tersedia 4 tray', owned:false
+  },
+  {
+    id:'seserahan-hidden', category:'Tray Seserahan', name:'Seserahan Hidden',
+    price:'Rp 40.000', priceUnit:'/ tray', priceAlt:null,
+    includes:[
+      'Jasa hias seserahan',
+      'Sewa box, kain & tray',
+      'Sewa bunga artificial (bebas request warna)',
+      'Durasi sewa 3 hari (H-1, H, H+1)'
+    ],
+    note:'Tersedia 8 tray', owned:false
+  },
+  {
+    id:'seserahan-mika-jumbo', category:'Paket Box', name:'Seserahan Mika Jumbo',
+    price:'Rp 70.000', priceUnit:'/ set', priceAlt:null,
+    includes:[
+      'Jasa hias seserahan',
+      'Box, aksesoris & bunga artificial menjadi hak milik',
+      'Free custom nuansa warna box & bunga'
+    ],
+    note:'Minimal order 4 set', owned:true
+  },
+  {
+    id:'seserahan-mika-standart', category:'Paket Box', name:'Seserahan Mika Standart',
+    price:'Rp 50.000', priceUnit:'/ set', priceAlt:null,
+    includes:[
+      'Jasa hias seserahan',
+      'Box, aksesoris & bunga artificial menjadi hak milik',
+      'Free custom nuansa warna box & bunga'
+    ],
+    note:'Minimal order 4 set', owned:true
+  },
+];
+
+const mahars = [
+  {
+    id:'mahar-frame-gununan', category:'Katalog Mahar', name:'Frame Gunungan',
+    price:'Rp 550.000', priceUnit:'', priceAlt:null,
+    includes:[
+      'Ukuran 30 x 40 cm',
+      'Frame fiber dengan tutup kaca',
+      'Nama pengantin akrilik timbul (3D)',
+      'Lampu mahar LED',
+      'Free replika buku nikah, uang & perhiasan',
+      'Free custom nuansa warna bunga',
+      'Free custom warna background'
+    ],
+    note:'Bentuk khas gunungan wayang', owned:true
+  },
+  {
+    id:'mahar-frame-fiber-kaca', category:'Katalog Mahar', name:'Frame Fiber (Tutup Kaca)',
+    price:'Rp 280.000', priceUnit:'', priceAlt:null,
+    includes:[
+      'Ukuran 30 x 40 cm',
+      'Frame fiber dengan tutup kaca',
+      'Nama pengantin kertas artpaper',
+      'Lampu mahar LED',
+      'Free replika buku nikah, uang & perhiasan',
+      'Free custom nuansa warna bunga',
+      'Free custom warna background'
+    ],
+    note:'Pilihan paling hemat', owned:true
+  },
+  {
+    id:'mahar-frame-double-akrilik', category:'Katalog Mahar', name:'Frame Fiber (Double Akrilik)',
+    price:'Rp 350.000', priceUnit:'', priceAlt:null,
+    includes:[
+      'Ukuran 30 x 40 cm',
+      'Frame fiber dengan double akrilik',
+      'Nama pengantin kertas artpaper',
+      'Lampu mahar LED',
+      'Free replika buku nikah, uang & perhiasan',
+      'Free custom nuansa warna bunga',
+      'Free custom warna background',
+      'Free mesin jam & baterai'
+    ],
+    note:'Dilengkapi jam hias', owned:true
+  },
+  {
+    id:'mahar-frame-akrilik', category:'Katalog Mahar', name:'Frame Full Akrilik',
+    price:'Rp 350.000', priceUnit:'', priceAlt:null,
+    includes:[
+      'Ukuran 30 x 30 cm',
+      'Frame full akrilik',
+      'Nama pengantin akrilik timbul (3D)',
+      'Free replika buku nikah, uang & perhiasan',
+      'Free custom nuansa warna bunga',
+      'Free custom warna background'
+    ],
+    note:'Tampilan modern transparan', owned:true
+  },
+];
+
+function iconSVG(category){
+  if(category === 'Katalog Mahar'){
+    return `<svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+      <path d="M23 6 C29 15 37 17 37 27 C37 35 30 39 23 40 C16 39 9 35 9 27 C9 17 17 15 23 6Z" stroke="var(--rose)" stroke-width="1.3" fill="none"/>
+      <circle cx="23" cy="24" r="2" fill="var(--brown)"/>
+    </svg>`;
+  }
+  if(category === 'Paket Box'){
+    return `<svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+      <rect x="9" y="18" width="28" height="19" stroke="var(--rose)" stroke-width="1.3"/>
+      <path d="M9 18 L23 8 L37 18" stroke="var(--brown)" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+      <path d="M23 8 L23 37" stroke="var(--brown)" stroke-width="1"/>
+    </svg>`;
+  }
+  return `<svg width="46" height="46" viewBox="0 0 46 46" fill="none">
+    <ellipse cx="23" cy="30" rx="17" ry="6" stroke="var(--rose)" stroke-width="1.3"/>
+    <path d="M9 30 V25 C9 22 15 20 23 20 C31 20 37 22 37 25 V30" stroke="var(--brown)" stroke-width="1.3" fill="none"/>
+    <path d="M17 20 Q23 10 29 20" stroke="var(--rose)" stroke-width="1" fill="none"/>
+  </svg>`;
+}
+
+function renderGrid(items, elId, waPrefix){
+  const grid = document.getElementById(elId);
+  grid.innerHTML = items.map(p => `
+    <div class="card p-7 flex flex-col">
+      <div class="w-14 h-14 rounded-full bg-cream2 flex items-center justify-center mb-6">${iconSVG(p.category)}</div>
+      <p class="text-[10px] tracked-sm text-brown mb-2">${p.category.toUpperCase()}</p>
+      <h3 class="font-display text-2xl mb-2">${p.name}</h3>
+      <p class="text-xs text-[#8a8074] mb-5">${p.note}</p>
+      <div class="mt-auto flex items-end justify-between pt-4 border-t border-[#EFE6D9]">
+        <div>
+          <p class="font-display text-xl text-rose leading-none">${p.price}<span class="text-xs text-[#8a8074] font-sans ml-1">${p.priceUnit}</span></p>
+        </div>
+        <button onclick="showDetail('${p.id}')" class="text-xs tracked-sm text-brown hover:text-rose transition">DETAIL →</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderGrid(products, 'produk-grid');
+renderGrid(mahars, 'mahar-grid');
+
+const allItems = [...products, ...mahars];
+
+function scrollToSection(id){
+  showHome();
+  setTimeout(()=>{
+    document.getElementById(id).scrollIntoView({behavior:'smooth', block:'start'});
+  }, 50);
+}
+
+function showHome(){
+  document.getElementById('page-home').classList.remove('hidden');
+  document.getElementById('page-detail').classList.add('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showDetail(id){
+  const p = allItems.find(x => x.id === id);
+  if(!p) return;
+
+  const waText = encodeURIComponent(`Halo Febriansyah Seserahan, saya ingin memesan "${p.name}". Mohon info lebih lanjut ya.`);
+
+  const orderSteps = p.owned ? [
+    ['Pilih paket & warna', 'Tentukan jumlah set dan nuansa warna box & bunga yang diinginkan.'],
+    ['Hubungi via WhatsApp', 'Kirim pesan ke 082 387 536 701 atau DM Instagram @Febriansyah.seserahan.'],
+    ['Konfirmasi & bayar DP', 'Kami infokan total harga (minimal order berlaku) dan jadwal pengerjaan.'],
+    ['Barang jadi milik Anda', 'Box, aksesoris & bunga artificial diambil atau dikirim sebelum hari-H, dan menjadi milik Anda.']
+  ] : [
+    ['Pilih tray & tanggal acara', 'Tentukan jenis tray dan tanggal pernikahan yang akan dilangsungkan.'],
+    ['Hubungi via WhatsApp', 'Kirim pesan ke 082 387 536 701 atau DM Instagram @Febriansyah.seserahan.'],
+    ['Request warna & tema', 'Sampaikan nuansa warna bunga dan barang yang ingin ditata di tray.'],
+    ['Bayar DP untuk booking', 'Booking dikunci dengan pembayaran DP sesuai kesepakatan.'],
+    ['Terima H-1, kembalikan H+1', 'Tray diantar & ditata H-1, digunakan saat acara, dan diambil kembali H+1.']
+  ];
+
+  document.getElementById('detail-content').innerHTML = `
+    <p class="text-xs tracked text-brown mb-3">${p.category.toUpperCase()}</p>
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <h1 class="font-display text-5xl">${p.name}</h1>
+      <div class="text-left md:text-right">
+        <p class="font-display text-4xl text-rose leading-none">${p.price}<span class="text-sm text-[#8a8074] font-sans ml-1">${p.priceUnit}</span></p>
+        ${p.priceAlt ? `<p class="text-xs text-[#8a8074] mt-1">${p.priceAlt}</p>` : ''}
+      </div>
+    </div>
+
+    <div class="w-full h-56 bg-cream2 border border-[#DEC9AC] flex items-center justify-center mb-12">
+      <div class="scale-[2.4]">${iconSVG(p.category)}</div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-14">
+      <div>
+        <h2 class="font-display text-2xl mb-5 text-rose">Sudah Termasuk</h2>
+        <ul class="space-y-3">
+          ${p.includes.map(i => `
+            <li class="flex items-start gap-3 text-sm text-[#4a4238]">
+              <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-rose shrink-0"></span>
+              <span>${i}</span>
+            </li>`).join('')}
+        </ul>
+        <p class="mt-6 text-xs tracked-sm text-brown">${p.note.toUpperCase()}</p>
+      </div>
+
+      <div>
+        <h2 class="font-display text-2xl mb-5 text-rose">Cara Memesan</h2>
+        <ol class="space-y-5">
+          ${orderSteps.map((s, idx) => `
+            <li class="flex gap-4">
+              <span class="font-display text-lg text-brown w-6 shrink-0">${idx+1}.</span>
+              <div>
+                <p class="text-sm font-medium">${s[0]}</p>
+                <p class="text-xs text-[#8a8074] mt-1 leading-relaxed">${s[1]}</p>
+              </div>
+            </li>`).join('')}
+        </ol>
+        <a href="https://wa.me/6282387536701?text=${waText}" target="_blank"
+           class="btn-primary inline-block rounded-full px-8 py-3.5 text-xs tracked-sm mt-8">PESAN SEKARANG VIA WHATSAPP</a>
+      </div>
+    </div>
+  `;
+
+  document.getElementById('page-home').classList.add('hidden');
+  document.getElementById('page-detail').classList.remove('hidden');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
